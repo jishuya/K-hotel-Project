@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<style>
+div {
+	width: 500;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+h1 {
+	color: #aa4a30;
+}
+
+
+a {
+	text-decoration: none;
+}
+
+</style>
+</head>
+<body bgcolor=white>
+
+	<br>
+	<hr width=700 color=#69491A>
+	<h1 align=center><img src="./reservation/resv/roomlogo10.png" style="width: 55px"> CONTACT</h1>
+	<hr width=700 color=#69491A>
+
+	<div class="info_item">
+    	<i class="lnr lnr-home"></i>
+    	<p align=center>99, Girin-daero, Wansan-gu, Jeonju-si, Jeollabuk-do, South Korea</p>
+    	<p align=center>K-Hotel (063) 282 - 1332, Reservation (063) 282 - 1330</p>
+    	<p align=center><B>Open Throughout the Year</B></p>
+    	<p align=center><B>Pleas Contact us anytime you want!</B></p>
+    </div>
+
+
+	<hr width=700 color=#69491A>
+	<br>
+	
+	
+	<!-- 지도를 표시할 div 입니다 -->
+	<div id="map" style="width: 700px; height: 550px;"></div>
+	<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=7a1e8cf37b28ac31a4b22c8528a942ab"></script>
+
+	<script>
+		var mapContainer = document.getElementById('map'), // 지도를 표시할 div 
+		mapOption = {
+			center : new kakao.maps.LatLng(35.8187410, 127.153867), // 지도의 중심좌표
+			level : 3
+		};
+		// 지도를 표시할 div와  지도 옵션으로  지도를 생성합니다
+		var map = new kakao.maps.Map(mapContainer, mapOption);
+
+		var markerPosition = new kakao.maps.LatLng(37.530253, 126.915707);
+		var marker = new kakao.maps.Marker({
+			position : markerPosition
+		});
+
+		marker.setMap(map);
+	</script>
+
+	<hr width=700 color=#69491A>
+</body>
+</html>

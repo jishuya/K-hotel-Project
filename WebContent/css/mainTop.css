@@ -1,0 +1,107 @@
+
+
+body {
+	margin: 0;	/*nevbar와의 불필요한 스페이스(빈공간)없애기*/
+	font-family: 'Courgette';
+}
+
+a {
+	text-decoration: none;
+	color: #69491A;
+}
+
+
+.navbar {
+	z-index: 1;
+	display: flex; /*div안에 있는 박스들이 개행되지 않고 한줄(row)에 다 들어갈 수 있다*/
+	/* flex-direction: row-reverse -> 오른쪽에 4,3,2,1로 붙는다*/
+	justify-content: space-between; /*박스 사이사이에 스페이스(빈공간)*/
+	align-items: center; /* 위로 다 올라간 박스들을 같은 가로 선에 배치 */
+	background-color: #faf3dd;
+	padding: 8px 12px;
+}
+
+.navbar_logo {
+	font-size: 24px;
+	color: #69491A;
+}
+
+.navbar_logo i {
+	color: #F2AB39;
+}
+
+.navbar_menu {
+	font-size: 24px;
+	display: flex; /*리스트가 한줄로 쭉 나온다*/
+	list-style: none; /* 리스트 앞에 ● 점 없애기*/
+	padding-left: 0;
+	
+}
+
+.navbar_menu li {
+	padding: 8px 20px; /*클릭할수 있는 범위를 넓게하기 위해서 margin보다는 padding사용*/
+	position: relative;
+}
+
+.navbar_menu li:hover {
+	background-color: #e3dfc8; 
+	border-radius: 4px;
+}
+
+
+.navbar_icons {
+	font-size: 18px;
+	list-style: none;
+	color: #69491A;
+	display: flex;
+	
+}
+
+.navbar_icons i {
+	padding: 8px 10px;
+}
+
+
+
+
+.navbar_menu > li:hover > .navbar_submenu {
+	/* #main-menu에 hover하면 숨겨진 sub-menu들이 한번에 모두 보이기 때문에, sub-menu가 해당 칸만 보일 수 있게 위와 같이 선택자를 지정*/
+	opacity: 1; 
+	visibility: visible;
+ }
+ 
+ .navbar_submenu {
+	/* #main-menu에 hover하면 숨겨진 sub-menu들이 한번에 모두 보이기 때문에, sub-menu가 해당 칸만 보일 수 있게 위와 같이 선택자를 지정*/
+	list-style: none;
+ }
+
+ 
+ /*  
+  *   sub-menu 부분
+  */
+ .navbar_submenu {
+	
+	
+	position: absolute;
+	left: 0;
+	top: 47px;
+	background: white;
+	list-style: none;
+	padding-left: 0;
+	border-radius: 4px;
+	
+	opacity: 0;   /* sub-menu를 숨기기 위함 */
+	visibility: hidden;   /* sub-menu를 숨기기 위함, display: none; 도 가능*/
+	
+	/* 여기서 숨겼으므로, main-menu > li 에 마우스오버 (hover) 했을 때, sub-menu가 나타나도록 해야함 */
+	transition: height 3s; /* 애니메이션 속성 */
+	transition-timing-function: linear;   
+ }
+
+
+
+
+
+
+
+
